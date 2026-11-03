@@ -1,0 +1,151 @@
+{
+  "analise": "pedidos-por-mes",
+  "metrica": "Quantidade de idPedido distintos com descSituacao = delivered, agrupados pelo mês de dtPedido.",
+  "filtros": {
+    "situacao": "descSituacao = delivered (order_status)",
+    "data_referencia": "order_purchase_timestamp (dtPedido)",
+    "inicio": null,
+    "fim": null,
+    "intervalo": "datas inicial e final inclusivas, por dia do calendário",
+    "uf": null
+  },
+  "arquivos": [
+    "dados/olist_orders_dataset.csv"
+  ],
+  "resultado": {
+    "linhas": [
+      {
+        "mes": "2016-09",
+        "pedidos": 1,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2016-10",
+        "pedidos": 265,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2016-11",
+        "pedidos": 0,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2016-12",
+        "pedidos": 1,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-01",
+        "pedidos": 750,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-02",
+        "pedidos": 1653,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-03",
+        "pedidos": 2546,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-04",
+        "pedidos": 2303,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-05",
+        "pedidos": 3546,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-06",
+        "pedidos": 3135,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-07",
+        "pedidos": 3872,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-08",
+        "pedidos": 4193,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-09",
+        "pedidos": 4150,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-10",
+        "pedidos": 4478,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-11",
+        "pedidos": 7289,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2017-12",
+        "pedidos": 5513,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-01",
+        "pedidos": 7069,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-02",
+        "pedidos": 6555,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-03",
+        "pedidos": 7003,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-04",
+        "pedidos": 6798,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-05",
+        "pedidos": 6749,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-06",
+        "pedidos": 6099,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-07",
+        "pedidos": 6159,
+        "mes_parcial": false
+      },
+      {
+        "mes": "2018-08",
+        "pedidos": 6351,
+        "mes_parcial": false
+      }
+    ],
+    "total": 96478
+  },
+  "cobertura": {
+    "linhas_pedidos": 99441,
+    "linhas_entregues": 96478,
+    "sem_id": 0,
+    "repetidos_removidos": 0,
+    "entregues_distintos": 96478,
+    "sem_data_valida": 0,
+    "no_periodo": 96478,
+    "selecionados": 96478
+  },
+  "avisos": []
+}

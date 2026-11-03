@@ -1,0 +1,37 @@
+{
+  "analise": "top-ufs",
+  "metrica": "UFs (descUF) dos clientes com mais idPedido distintos entregues; pedido e cliente ligados por idCliente.",
+  "filtros": {
+    "situacao": "descSituacao = delivered (order_status)",
+    "data_referencia": "order_purchase_timestamp (dtPedido)",
+    "inicio": "2019-01-01",
+    "fim": "2019-03-31",
+    "intervalo": "datas inicial e final inclusivas, por dia do calendário",
+    "uf": null
+  },
+  "arquivos": [
+    "dados/olist_orders_dataset.csv",
+    "dados/olist_customers_dataset.csv"
+  ],
+  "resultado": {
+    "linhas": [],
+    "top": 5,
+    "total_com_uf": 0,
+    "ufs_distintas": 0
+  },
+  "cobertura": {
+    "linhas_pedidos": 99441,
+    "linhas_entregues": 96478,
+    "sem_id": 0,
+    "repetidos_removidos": 0,
+    "entregues_distintos": 96478,
+    "sem_data_valida": 0,
+    "no_periodo": 0,
+    "sem_cliente_correspondente": 0,
+    "cliente_sem_uf": 0,
+    "selecionados": 0
+  },
+  "avisos": [
+    "Nenhum pedido entregue no período/filtros informados: ranking vazio."
+  ]
+}
