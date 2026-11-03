@@ -1,0 +1,43 @@
+{
+  "analise": "ticket-medio",
+  "metrica": "Soma de vlPreco dos itens dos pedidos entregues selecionados dividida pelo número de idPedido distintos selecionados, sem vlFrete.",
+  "filtros": {
+    "situacao": "descSituacao = delivered (order_status)",
+    "data_referencia": "order_purchase_timestamp (dtPedido)",
+    "inicio": null,
+    "fim": null,
+    "intervalo": "datas inicial e final inclusivas, por dia do calendário",
+    "uf": null
+  },
+  "arquivos": [
+    "dados/olist_orders_dataset.csv",
+    "dados/olist_order_items_dataset.csv"
+  ],
+  "resultado": {
+    "pedidos": 96478,
+    "itens": 110197,
+    "pedidos_com_itens": 96478,
+    "cobertura_itens_pct": 100.0,
+    "soma_preco": 13211395.96,
+    "ticket_medio": 136.94,
+    "ticket_medio_apenas_pedidos_com_itens": 136.94,
+    "frete_incluido": false
+  },
+  "cobertura": {
+    "linhas_pedidos": 99441,
+    "linhas_entregues": 96478,
+    "sem_id": 0,
+    "repetidos_removidos": 0,
+    "entregues_distintos": 96478,
+    "sem_data_valida": 0,
+    "no_periodo": 96478,
+    "selecionados": 96478,
+    "itens_com_pedido_inexistente": 0,
+    "precos_invalidos": 168,
+    "pedidos_com_itens": 96478,
+    "pedidos_sem_itens": 0
+  },
+  "avisos": [
+    "168 item(ns) dos pedidos selecionados têm preço (vlPreco) ausente ou não numérico (ex.: célula convertida em data) e foram ignorados na soma; o ticket pode estar subestimado."
+  ]
+}

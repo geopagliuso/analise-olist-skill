@@ -1,0 +1,46 @@
+{
+  "analise": "ticket-medio",
+  "metrica": "Soma de vlPreco dos itens dos pedidos entregues selecionados dividida pelo número de idPedido distintos selecionados, sem vlFrete.",
+  "filtros": {
+    "situacao": "descSituacao = delivered (order_status)",
+    "data_referencia": "order_purchase_timestamp (dtPedido)",
+    "inicio": "2018-01-01",
+    "fim": "2018-03-31",
+    "intervalo": "datas inicial e final inclusivas, por dia do calendário",
+    "uf": "SP"
+  },
+  "arquivos": [
+    "dados/olist_orders_dataset.csv",
+    "dados/olist_customers_dataset.csv",
+    "dados/olist_order_items_dataset.csv"
+  ],
+  "resultado": {
+    "pedidos": 8578,
+    "itens": 9816,
+    "pedidos_com_itens": 8578,
+    "cobertura_itens_pct": 100.0,
+    "soma_preco": 1053156.63,
+    "ticket_medio": 122.77,
+    "ticket_medio_apenas_pedidos_com_itens": 122.77,
+    "frete_incluido": false
+  },
+  "cobertura": {
+    "linhas_pedidos": 99441,
+    "linhas_entregues": 96478,
+    "sem_id": 0,
+    "repetidos_removidos": 0,
+    "entregues_distintos": 96478,
+    "sem_data_valida": 0,
+    "no_periodo": 20627,
+    "sem_cliente_correspondente": 0,
+    "cliente_sem_uf": 0,
+    "selecionados": 8578,
+    "itens_com_pedido_inexistente": 0,
+    "precos_invalidos": 15,
+    "pedidos_com_itens": 8578,
+    "pedidos_sem_itens": 0
+  },
+  "avisos": [
+    "15 item(ns) dos pedidos selecionados têm preço (vlPreco) ausente ou não numérico (ex.: célula convertida em data) e foram ignorados na soma; o ticket pode estar subestimado."
+  ]
+}

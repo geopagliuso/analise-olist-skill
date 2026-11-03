@@ -1,0 +1,2 @@
+pedidos,itens,pedidos_com_itens,cobertura_itens_pct,soma_preco,ticket_medio,ticket_medio_apenas_pedidos_com_itens,frete_incluido
+0,0,0,,0.0,,,False

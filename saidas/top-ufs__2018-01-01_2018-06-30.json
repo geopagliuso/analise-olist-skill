@@ -1,0 +1,66 @@
+{
+  "analise": "top-ufs",
+  "metrica": "UFs (descUF) dos clientes com mais idPedido distintos entregues; pedido e cliente ligados por idCliente.",
+  "filtros": {
+    "situacao": "descSituacao = delivered (order_status)",
+    "data_referencia": "order_purchase_timestamp (dtPedido)",
+    "inicio": "2018-01-01",
+    "fim": "2018-06-30",
+    "intervalo": "datas inicial e final inclusivas, por dia do calendário",
+    "uf": null
+  },
+  "arquivos": [
+    "dados/olist_orders_dataset.csv",
+    "dados/olist_customers_dataset.csv"
+  ],
+  "resultado": {
+    "linhas": [
+      {
+        "posicao": 1,
+        "uf": "SP",
+        "pedidos": 17456,
+        "pct_dos_pedidos_com_uf": 43.34
+      },
+      {
+        "posicao": 2,
+        "uf": "RJ",
+        "pedidos": 4923,
+        "pct_dos_pedidos_com_uf": 12.22
+      },
+      {
+        "posicao": 3,
+        "uf": "MG",
+        "pedidos": 4735,
+        "pct_dos_pedidos_com_uf": 11.76
+      },
+      {
+        "posicao": 4,
+        "uf": "RS",
+        "pedidos": 2136,
+        "pct_dos_pedidos_com_uf": 5.3
+      },
+      {
+        "posicao": 5,
+        "uf": "PR",
+        "pedidos": 2070,
+        "pct_dos_pedidos_com_uf": 5.14
+      }
+    ],
+    "top": 5,
+    "total_com_uf": 40273,
+    "ufs_distintas": 27
+  },
+  "cobertura": {
+    "linhas_pedidos": 99441,
+    "linhas_entregues": 96478,
+    "sem_id": 0,
+    "repetidos_removidos": 0,
+    "entregues_distintos": 96478,
+    "sem_data_valida": 0,
+    "no_periodo": 40273,
+    "sem_cliente_correspondente": 0,
+    "cliente_sem_uf": 0,
+    "selecionados": 40273
+  },
+  "avisos": []
+}
