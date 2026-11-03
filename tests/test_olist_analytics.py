@@ -104,16 +104,16 @@ def test_ticket_medio_recorte_todo_periodo():
     r = res["resultado"]
     # esperado (SQL): 141.441765 = soma(price) / 17 pedidos distintos, sem frete
     assert r["pedidos"] == 17
-    assert r["ticket_medio"] == pytest.approx(141.441765, abs=1e-5)
+    assert r["ticket_medio"] == pytest.approx(141.441765, abs=0.005)  # saída arredondada a 2 casas
     assert r["cobertura_itens_pct"] == 100.0
     assert r["itens"] > r["pedidos"]  # há pedidos com vários itens: não se divide por itens
 
 
 def test_ticket_medio_continuacao_periodo_e_uf():
     jan = oa.ticket_medio(RECORTE, inicio=date(2018, 1, 1), fim=date(2018, 1, 31))["resultado"]
-    assert jan["pedidos"] == 7 and jan["ticket_medio"] == pytest.approx(216.227143, abs=1e-5)
+    assert jan["pedidos"] == 7 and jan["ticket_medio"] == pytest.approx(216.227143, abs=0.005)
     sp = oa.ticket_medio(RECORTE, inicio=date(2018, 1, 1), fim=date(2018, 1, 31), uf="SP")["resultado"]
-    assert sp["pedidos"] == 3 and sp["ticket_medio"] == pytest.approx(219.963333, abs=1e-5)
+    assert sp["pedidos"] == 3 and sp["ticket_medio"] == pytest.approx(219.963333, abs=0.005)
 
 
 def test_frete_corrompido_nao_afeta_o_ticket():
