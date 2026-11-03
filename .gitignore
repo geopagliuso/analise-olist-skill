@@ -3,4 +3,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 # dados completos do Olist ficam fora do repositório (informe a pasta com --dados ou OLIST_DATA_DIR)
-dados/
+dados

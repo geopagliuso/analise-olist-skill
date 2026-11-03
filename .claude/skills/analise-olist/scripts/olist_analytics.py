@@ -440,7 +440,9 @@ def formatar_markdown(res: dict) -> str:
 
 def _nome_base(res: dict) -> str:
     f = res["filtros"]
-    partes = [res["analise"], f"{f.get('inicio') or 'inicio'}_{f.get('fim') or 'fim'}"]
+    periodo = f"{f['inicio']}_{f['fim']}" if f.get("inicio") and f.get("fim") else \
+        f"desde-{f['inicio']}" if f.get("inicio") else f"ate-{f['fim']}" if f.get("fim") else "toda-a-base"
+    partes = [res["analise"], periodo]
     if f.get("uf"):
         partes.append(f"UF-{f['uf']}")
     return "__".join(partes)
@@ -500,7 +502,7 @@ def main(argv=None) -> int:
         return 2
     print(json.dumps(res, ensure_ascii=False, indent=2) if args.json else formatar_markdown(res))
     for caminho in salvos:
-        print(f"[salvo] {caminho}", file=sys.stderr)
+        print(f"[salvo] {os.path.relpath(caminho)}", file=sys.stderr)
     return 0
 
 

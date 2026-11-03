@@ -1,6 +1,6 @@
 ---
 name: analise-olist
-description: "Copiloto de analytics sobre a base Olist (marketplace brasileiro). Responde em linguagem natural, executando código Python sobre os arquivos CSV/XLSX do Olist, a: quantos pedidos entregues por mês, quais as cinco UFs dos clientes com mais pedidos entregues e qual o ticket médio do preço dos itens por pedido entregue (sem frete), com período e UF ajustáveis em pedidos de continuação. Use quando o usuário perguntar sobre pedidos, vendas ou clientes do Olist e quiser uma resposta verificável (métrica, filtros, arquivos, código e resultado). Não use para dashboards, previsões, outras bases ou dados que o Olist não contém (custo, lucro, devoluções)."
+description: "Copiloto de analytics sobre a base Olist (marketplace brasileiro). Responde em linguagem natural, executando código Python sobre os arquivos CSV/XLSX do Olist, a: quantos pedidos entregues por mês, quais as cinco UFs dos clientes com mais pedidos entregues e qual o ticket médio do preço dos itens por pedido entregue (sem frete), com período e UF ajustáveis em pedidos de continuação. Use para qualquer pergunta sobre pedidos, vendas, clientes, margem, lucro ou outras métricas da base Olist, mesmo quando não for claro se os dados permitem responder: a skill confere as colunas existentes, calcula o que a base suporta e recusa, sem estimar, o que ela não contém (custo, lucro, devoluções). Não use para dashboards, previsões ou outras bases."
 ---
 
 # Análise Olist: copiloto de analytics
@@ -102,7 +102,7 @@ python .claude/skills/analise-olist/scripts/olist_analytics.py <analise> --dados
 - **Verificação do código:** `python -m pytest -q` na raiz do repositório.
 - **Se o recurso não estiver disponível:** sem permissão para executar comandos, ou sem acesso aos arquivos, explique o impedimento e o que o usuário pode fazer (informar a pasta, liberar a execução). Não calcule de cabeça e não invente números.
 
-Não descreva uma operação como executada quando ela tiver sido apenas proposta. Todo número apresentado como calculado deve vir da saída de uma execução feita nesta conversa, que o usuário deve poder ver.
+Não descreva uma operação como executada quando ela tiver sido apenas proposta. Todo número apresentado como calculado deve vir da saída de uma execução feita nesta conversa, que o usuário deve poder ver. Isso vale também para percentuais e diferenças entre execuções: calcule-os por código (por exemplo, a partir da saída `--json`) ou não os apresente.
 
 ## 9. Limites de atuação
 
