@@ -104,7 +104,7 @@ Resumo (detalhes em [`docs/verificacoes.md`](docs/verificacoes.md)):
 
 ## Fluxo no GitHub
 
-Cada parte foi feita em uma branch e integrada na `main`: `test/recorte-e-testes` (recorte e testes escritos antes do código), `feat/script-analises`, `feat/skill-md` e `docs/verificacoes`. O histórico (`git log --graph`) mostra que o commit `test:` vem antes do commit `feat:`.
+Cada parte foi feita em uma branch e integrada na `main`: `test/recorte-e-testes` (recorte e testes escritos antes do código), `feat/script-analises`, `feat/skill-md`, `fix/description-e-saidas` (correção encontrada nos testes com o agente) e `docs/verificacoes`. O histórico (`git log --graph`) mostra que o commit `test:` vem antes do commit `feat:`.
 
 ## Entrega da atividade
 
